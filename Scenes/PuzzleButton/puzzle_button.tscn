@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cctqpaxoajir5" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_lffmm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c66ud"]
+size = Vector2(14, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7725"]
 atlas = ExtResource("2_lffmm")
@@ -36,6 +37,7 @@ animations = [{
 script = ExtResource("1_dls00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_c66ud")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

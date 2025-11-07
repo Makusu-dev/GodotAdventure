@@ -6,7 +6,4 @@ extends Area2D
 func _on_body_entered(body) -> void:
 	if body is Player:
 		SceneManager.player_spawn_position = player_spawn_position
-		get_tree().change_scene_to_file(next_scene)
-
-func _on_body_exited(body: Node2D) -> void:
-	pass
+		get_tree().change_scene_to_file.call_deferred(next_scene)

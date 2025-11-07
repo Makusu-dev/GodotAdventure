@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://5glkqa3vqb2a"]
+[gd_scene load_steps=14 format=4 uid="uid://5glkqa3vqb2a"]
 
 [ext_resource type="Texture2D" uid="uid://npn6e0xcafme" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="1_lvdhj"]
 [ext_resource type="Texture2D" uid="uid://cdu4occjhrnq5" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="2_t73p4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dumk4g0gwvo1e" path="res://SceneEntrance/scene_entrance.tscn" id="5_t73p4"]
 [ext_resource type="PackedScene" uid="uid://cdjkt67gl3frp" path="res://Scenes/Block/block.tscn" id="6_hgqpj"]
 [ext_resource type="PackedScene" uid="uid://dp7x7yeri7jkv" path="res://Scenes/PuzzleButton/puzzle_button.tscn" id="7_gh24m"]
+[ext_resource type="PackedScene" uid="uid://1emyenejh2hy" path="res://Scenes/LockedDoor/locked_door.tscn" id="8_7qnpr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0du0"]
 texture = ExtResource("1_lvdhj")
@@ -817,6 +818,11 @@ player_spawn_position = Vector2(-23, -101)
 
 [node name="block" parent="." instance=ExtResource("6_hgqpj")]
 position = Vector2(-88, 54)
-linear_damp = 2.0
+linear_damp = 5.811
+
+[node name="LockedDoor" parent="." instance=ExtResource("8_7qnpr")]
+position = Vector2(-168, 25)
 
 [connection signal="body_exited" from="PuzzleButton" to="PuzzleButton" method="_on_body_exited"]
+[connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
+[connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]
