@@ -29,6 +29,11 @@ folder_colors={
 "res://Ninja Adventure - Asset Pack/": "green"
 }
 
+[global_group]
+
+wall="wall tilemap layer"
+pushable="pushable blocks"
+
 [input]
 
 move_up={
